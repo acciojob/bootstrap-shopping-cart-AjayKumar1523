@@ -1,16 +1,225 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css"/>
+  <style>
+    body { background: #f0f2f5; }
+
+    h1, h2, h3, h4, h5, h6 { color: #3b99e0; }
+
+    /* Block heading */
+    .block-heading {
+      text-align: center;
+      padding: 2.5rem 0 2rem;
+    }
+    .block-heading h1 {
+      font-weight: 400;
+      color: #3b99e0;
+    }
+    .block-heading p {
+      color: #888;
+      max-width: 420px;
+      margin: 0.5rem auto 0;
+      font-size: 0.95rem;
+    }
+
+    /* Product block */
+    .product {
+      background: #fff;
+      padding: 1.5rem 1.25rem;
+      border-bottom: 1px solid #eee;
+    }
+    .product:last-child { border-bottom: none; }
+
+    .product img.img-fluid {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+    }
+
+    .product .product-title {
+      color: #3b99e0;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+    .product .product-meta {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .product .product-price {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #333;
+    }
+    .product .qty-label {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.35rem;
+    }
+    .product input[type="number"] {
+      width: 70px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.3rem 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* Card wrapper around products + summary */
+    .cart-card {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    /* Summary block */
+    .summary {
+      background-color: #f7fbff;
+      border-top: 3px solid #5ea4f3;
+      padding: 1.75rem 1.5rem;
+      height: 100%;
+    }
+    .summary h5 {
+      color: #333;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .summary .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid #dde8f5;
+      font-size: 0.95rem;
+      color: #444;
+    }
+    .summary .summary-row:last-of-type {
+      font-weight: 600;
+      color: #222;
+    }
+    .summary .btn-checkout {
+      display: block;
+      width: 100%;
+      background: #3b99e0;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.75rem;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      text-align: center;
+    }
+    .summary .btn-checkout:hover { background: #2a80c5; }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
 
+  <div class="container">
+
+    <!-- Block Heading -->
+    <div class="block-heading">
+      <h1>Shopping cart</h1>
+      <p>The customer is very important, the customer will be followed by the customer. Now, as an urn, I have no right to be in possession of property.</p>
+    </div>
+
+    <!-- Main Row -->
+    <div class="row cart-card">
+
+      <!-- Products Column -->
+      <div class="col-lg-8 p-0">
+
+        <!-- Product 1 -->
+        <div class="product">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone12pro-gold-select?wid=200&hei=200&fmt=png-alpha" class="img-fluid" alt="iPhone 12 Pro"/>
+            </div>
+            <div class="col">
+              <div class="product-title">I am very sorry</div>
+              <div class="product-meta">
+                Display: 5 inches<br/>
+                RAM: 4GB<br/>
+                Memory: 32GB
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="qty-label">Quantity:</div>
+              <input type="number" value="0" min="0"/>
+            </div>
+            <div class="col-auto product-price">$120</div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone12pro-gold-select?wid=200&hei=200&fmt=png-alpha" class="img-fluid" alt="iPhone 12 Pro"/>
+            </div>
+            <div class="col">
+              <div class="product-title">I am very sorry</div>
+              <div class="product-meta">
+                Display: 5 inches<br/>
+                RAM: 4GB<br/>
+                Memory: 32GB
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="qty-label">Quantity:</div>
+              <input type="number" value="1" min="0"/>
+            </div>
+            <div class="col-auto product-price">$120</div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone12pro-gold-select?wid=200&hei=200&fmt=png-alpha" class="img-fluid" alt="iPhone 12 Pro"/>
+            </div>
+            <div class="col">
+              <div class="product-title">I am very sorry</div>
+              <div class="product-meta">
+                Display: 5 inches<br/>
+                RAM: 4GB<br/>
+                Memory: 32GB
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="qty-label">Quantity:</div>
+              <input type="number" value="1" min="0"/>
+            </div>
+            <div class="col-auto product-price">$120</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Summary Column -->
+      <div class="col-lg-4 p-0">
+        <div class="summary">
+          <h5>Summary</h5>
+          <div class="summary-row"><span>Subtotal</span><span>$360</span></div>
+          <div class="summary-row"><span>Discount</span><span>$0</span></div>
+          <div class="summary-row"><span>Shipping</span><span>$0</span></div>
+          <div class="summary-row"><span>Total</span><span>$360</span></div>
+          <button class="btn btn-checkout">checkout</button>
+        </div>
+      </div>
+
+    </div><!-- /.row -->
+
+  </div><!-- /.container -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
